@@ -11,6 +11,17 @@ def save(manufacturer):
     manufacturer.id = id
     return manufacturer
 
+def select(id):
+    manufacturer = None
+    sql = "SELECT * FROM manufacturers WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+
+    if result is not None:
+        manufacturer = Manufacturer(result['name'], result['location'], result['product_type'])
+    return manufacturer
+
+
 def delete_all():
     sql = "DELETE FROM manufacturers"
     run_sql(sql)

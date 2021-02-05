@@ -12,6 +12,18 @@ def save(bike):
     bike.id = id
     return bike
 
+def select_all():
+    bikes = []
+
+    sql = "SELECT * FROM bikes"
+    results = run_sql(sql)
+
+    for row in results:
+        manufacturer = manufacturer_repository.select(row['manufacturer_id'])
+        bike = Bike(manufacturer, row['model'], row['description'], row['buy_cost'], row['sell_price'], row['id'] )
+        bikes.append(bike)
+    return bikes
+
 def delete_all():
     sql = "DELETE FROM bikes"
     run_sql(sql)

@@ -3,6 +3,14 @@
 {% block content %}
 <h1>Bike Selected</h1>
 
-<p>Here is your bike information</p>
+<div>
+    <p>{{bike.manufacturer.name()}}</p>
+    <hr>
+    <p>{{bike.model}}</p>
+    <p>{{bike.description}}</p>
+    <p>{{bike.buy_cost}}</p>
+    <p>{{bike.sell_price}}</p>
+    <p><a href="/bikes/{{bike.id}}/edit">Edit</a></p>
+</div>
     
 {% endblock %}

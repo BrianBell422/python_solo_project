@@ -3,6 +3,15 @@
 {% block content %}
 <h1>Bikes</h1>
 
-<p>Here are all the bikes</p>
+{% for bike in all_bikes %}
+    <hr>
+    <div>
+        <h2>Manufacturer: {{bike.manufacturer.name}}</h2>
+        <h3>Model: {{bike.model}}</h3>
+        <p>Description: {{bike.description}}</p>
+        <p>Buy Cost: {{bike.buy_cost}}</p>
+        <p>Sell Price: {{bike.sell_price}}</p>
+    </div>
+{% endfor %}
     
 {% endblock %}
