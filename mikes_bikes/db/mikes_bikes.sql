@@ -1,5 +1,12 @@
+DROP TABLE bikes;
 DROP TABLE manufacturers;
-DROP TABLE bikes:
+
+CREATE TABLE manufacturers (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255),
+    location VARCHAR(255),
+    product_type VARCHAR(255)
+);
 
 CREATE TABLE bikes (
     id SERIAL PRIMARY KEY,
@@ -8,11 +15,4 @@ CREATE TABLE bikes (
     description VARCHAR(255),
     buy_cost INT,
     sell_price INT
-);
-
-CREATE TABLE manufacturers (
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(255),
-    location VARCHAR(255),
-    product_type VARCHAR(255)
-);
+)
