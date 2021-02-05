@@ -21,6 +21,16 @@ def select(id):
         manufacturer = Manufacturer(result['name'], result['location'], result['product_type'])
     return manufacturer
 
+def select_all():
+    manufacturers = []
+
+    sql = "SELECT * FROM manufacturers"
+    results = run_sql(sql)
+
+    for row in results:
+        manufacturer = Manufacturer(row['name'], row['location'],row['product_type'])
+        manufacturers.append(manufacturer)
+    return manufacturers
 
 def delete_all():
     sql = "DELETE FROM manufacturers"

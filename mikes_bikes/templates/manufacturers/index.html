@@ -3,6 +3,13 @@
 {% block content %}
 <h1>Manufacturers</h1>
 
-<p>Here are all the manufacturers</p>
+{% for manufacturer in all_manufacturers %}
+    <hr>
+    <div>
+        <h2>{{manufacturer.name}}</h2>
+        <p>{{manufacturer.location}}</p>
+        <p>{{manufacturer.product_type}}</p>
+    </div>
+{% endfor %}
     
 {% endblock %}
