@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, Blueprint
+from models.manufacturer import Manufacturer
 
 manufacturers_blueprint = Blueprint("/manufacturers", __name__)
 
