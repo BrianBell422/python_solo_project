@@ -13,6 +13,11 @@ def bikes():
     bikes = bike_repository.select_all()
     return render_template("bikes/index.html", all_bikes = bikes)
 
+@bikes_blueprint.route("/bikes/all")
+def bikes_all():
+    bikes = bike_repository.select_all()
+    return render_template("bikes/all.html", all_bikes = bikes)
+
 @bikes_blueprint.route("/bikes/new", methods=['GET'])
 def new_bike():
     manufacturers = manufacturer_repository.select_all()
