@@ -10,9 +10,9 @@ CREATE TABLE manufacturers (
 
 CREATE TABLE bikes (
     id SERIAL PRIMARY KEY,
-    manufacturer_id INT REFERENCES manufacturers(id),
+    manufacturer_id INT REFERENCES manufacturers(id) ON DELETE CASCADE,
     model VARCHAR(255),
     description VARCHAR(255),
     buy_cost INT,
     sell_price INT
-)
+);

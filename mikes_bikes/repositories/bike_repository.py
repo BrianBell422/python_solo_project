@@ -35,6 +35,12 @@ def select(id):
         bike = Bike(manufacturer, result['model'], result['description'], result['buy_cost'], result['sell_price'], result['id'])
     return bike
 
+def update(bike):
+    sql = "UPDATE bikes SET (manufacturer_id, model, description, buy_cost, sell_price) = (%s, %s, %s, %s, %s) WHERE id = %s"
+    values = [bike.manufacturer.id, bike.model, bike.description, bike.buy_cost, bike.sell_price, bike.id]
+    print(values)
+    run_sql(sql, values)
+
 def delete_all():
     sql = "DELETE FROM bikes"
     run_sql(sql)
@@ -42,10 +48,4 @@ def delete_all():
 def delete(id):
     sql = "DELETE  FROM bikes WHERE id = %s"
     values = [id]
-    run_sql(sql, values)
-
-def update(bike):
-    sql = "UPDATE bikes SET (manufacturer_id, model, description, buy_cost, sell_price) = (%s, %s, %s, %s, %s) WHERE id = %s"
-    values = [bike.manufacturer.id, bike.model, bike.description, bike.buy_cost, bike.sell_price, bike.id]
-    print(values)
     run_sql(sql, values)

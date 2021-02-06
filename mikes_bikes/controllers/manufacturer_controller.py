@@ -45,3 +45,8 @@ def update_manufacturer(id):
 @manufacturers_blueprint.route("/manufacturers/show")
 def show():
     return render_template("manufacturers/show.html")
+
+@manufacturers_blueprint.route("/manufacturers/<id>/delete", methods=['POST'])
+def delete_manufacturer(id):
+    manufacturer_repository.delete(id)
+    return redirect('/manufacturers')
