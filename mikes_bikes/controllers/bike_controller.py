@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, Blueprint
 from models.bike import Bike
+from models.manufacturer import Manufacturer
 import repositories.bike_repository as bike_repository
 import repositories.manufacturer_repository as manufacturer_repository
 
@@ -11,6 +12,11 @@ bikes_blueprint = Blueprint("/bikes", __name__)
 def bikes():
     bikes = bike_repository.select_all()
     return render_template("bikes/index.html", all_bikes = bikes)
+
+@bikes_blueprint.route("/bikes/new", methods=['GET'])
+def new_bike():
+    manufacturers = manufacturer_repository.select_all()
+    return render_template("bikes/new.html", all_manufacturers = manufacturers)
 
 @bikes_blueprint.route("/bikes/show")
 def show():
