@@ -6,14 +6,11 @@
 {% for manufacturer in all_manufacturers %}
     <hr>
     <div>
-        <h2>{{manufacturer.name}}</h2>
-        <p>{{manufacturer.location}}</p>
-        <p>{{manufacturer.product_type}}</p>
+        <h3><a href="/manufacturers/{{manufacturer.id}}">{{manufacturer.name}}</a></h3>
     </div>
 {% endfor %}
 
 <hr>
-
-<p><a href="manufacturers/new">Add new manufacturer</a></p>
+<h2><a href="manufacturers/new">Add new manufacturer</a></h2>
     
 {% endblock %}

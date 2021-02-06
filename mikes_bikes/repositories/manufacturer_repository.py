@@ -18,7 +18,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        manufacturer = Manufacturer(row['name'], row['location'],row['product_type'])
+        manufacturer = Manufacturer(row['name'], row['location'],row['product_type'], row['id'])
         manufacturers.append(manufacturer)
     return manufacturers
 

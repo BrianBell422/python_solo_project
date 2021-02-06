@@ -23,6 +23,11 @@ def create_manufacturer():
     manufacturer_repository.save(manufacturer)
     return redirect('/manufacturers')
 
+@manufacturers_blueprint.route("/manufacturers/<id>", methods=['GET'])
+def show_manufacturer(id):
+    manufacturer = manufacturer_repository.select(id)
+    return render_template('manufacturers/show.html', manufacturer = manufacturer)
+
 @manufacturers_blueprint.route("/manufacturers/show")
 def show():
     return render_template("manufacturers/show.html")
