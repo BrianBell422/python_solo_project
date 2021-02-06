@@ -29,6 +29,11 @@ def create_bike():
     bike_repository.save(bike)
     return redirect('/bikes')
 
+@bikes_blueprint.route("/bikes/<id>", methods=['GET'])
+def show_bike(id):
+    bike = bike_repository.select(id)
+    return render_template('bikes/show.html', bike = bike)
+
 @bikes_blueprint.route("/bikes/show")
 def show():
     return render_template("bikes/show.html")

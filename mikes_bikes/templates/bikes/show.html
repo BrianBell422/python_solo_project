@@ -2,15 +2,14 @@
 
 {% block content %}
 <h1>Bike Selected</h1>
-
+<hr>
 <div>
-    <p>{{bike.manufacturer.name()}}</p>
-    <hr>
-    <p>{{bike.model}}</p>
-    <p>{{bike.description}}</p>
-    <p>{{bike.buy_cost}}</p>
-    <p>{{bike.sell_price}}</p>
-    <p><a href="/bikes/{{bike.id}}/edit">Edit</a></p>
+    <p><h2>{{bike.manufacturer.name}}</h2></p>
+    <p><h3>Model: {{bike.model}}</h3></p>
+    <p>Description: {{bike.description}}</p>
+    <p>Buy Cost: {{bike.buy_cost}}</p>
+    <p>Sell Price: {{bike.sell_price}}</p>
+    <p><a href="/bikes/{{bike.id}}/edit"><button>Edit</button></a></p>
 </div>
     
 {% endblock %}

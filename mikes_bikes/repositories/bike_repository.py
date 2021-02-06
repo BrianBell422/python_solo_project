@@ -24,6 +24,17 @@ def select_all():
         bikes.append(bike)
     return bikes
 
+def select(id):
+    bike = None
+    sql = "SELECT * FROM bikes WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+
+    if result is not None:
+        manufacturer = manufacturer_repository.select(result['manufacturer_id'])
+        bike = Bike(manufacturer, result['model'], result['description'], result['buy_cost'], result['sell_price'], result['id'])
+    return bike
+
 def delete_all():
     sql = "DELETE FROM bikes"
     run_sql(sql)
