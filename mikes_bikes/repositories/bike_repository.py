@@ -43,3 +43,9 @@ def delete(id):
     sql = "DELETE  FROM bikes WHERE id = %s"
     values = [id]
     run_sql(sql, values)
+
+def update(bike):
+    sql = "UPDATE bikes SET (manufacturer_id, model, description, buy_cost, sell_price) = (%s, %s, %s, %s, %s) WHERE id = %s"
+    values = [bike.manufacturer.id, bike.model, bike.description, bike.buy_cost, bike.sell_price, bike.id]
+    print(values)
+    run_sql(sql, values)

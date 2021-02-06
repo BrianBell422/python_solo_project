@@ -39,6 +39,23 @@ def show_bike(id):
     bike = bike_repository.select(id)
     return render_template('bikes/show.html', bike = bike)
 
+@bikes_blueprint.route("/bikes/<id>/edit", methods=['GET'])
+def edit_bike(id):
+    bike = bike_repository.select(id)
+    manufacturers = manufacturer_repository.select_all()
+    return render_template('bikes/edit.html', bike = bike, all_manufacturers = manufacturers)
+
+@bikes_blueprint.route("/bikes/<id>", methods=['POST'])
+def update_bike(id):
+    manufacturer = manufacturer_repository.select(request.form['manufacturer_id'])
+    model = request.form['model']
+    description = request.form['description']
+    buy_cost = request.form['buy_cost']
+    sell_price = request.form['sell_price']
+    bike = Bike(manufacturer, model, description, buy_cost, sell_price, id)
+    bike_repository.update(bike)
+    return redirect('/bikes')
+
 @bikes_blueprint.route("/bikes/show")
 def show():
     return render_template("bikes/show.html")
