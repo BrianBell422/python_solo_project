@@ -59,3 +59,8 @@ def update_bike(id):
 @bikes_blueprint.route("/bikes/show")
 def show():
     return render_template("bikes/show.html")
+
+@bikes_blueprint.route("/bikes/<id>/delete", methods=['POST'])
+def delete_bike(id):
+    bike_repository.delete(id)
+    return redirect('/bikes')

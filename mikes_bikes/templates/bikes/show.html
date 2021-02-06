@@ -11,5 +11,10 @@
     <p>Sell Price: {{bike.sell_price}}</p>
     <p><a href="/bikes/{{bike.id}}/edit"><button>Edit</button></a></p>
 </div>
+<div>
+    <form class="delete-form" action="/bikes/{{bike.id}}/delete" method="POST">
+        <button>Delete</button>
+    </form>
+</div>
     
 {% endblock %}
