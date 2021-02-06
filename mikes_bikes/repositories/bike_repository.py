@@ -20,10 +20,15 @@ def select_all():
 
     for row in results:
         manufacturer = manufacturer_repository.select(row['manufacturer_id'])
-        bike = Bike(manufacturer, row['model'], row['description'], row['buy_cost'], row['sell_price'], row['id'] )
+        bike = Bike(manufacturer, row['model'], row['description'], row['buy_cost'], row['sell_price'], row['id'])
         bikes.append(bike)
     return bikes
 
 def delete_all():
     sql = "DELETE FROM bikes"
     run_sql(sql)
+
+def delete(id):
+    sql = "DELETE  FROM bikes WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)

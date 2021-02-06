@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form action="/manufacturers" method="post">
+
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Name" required autofocus>
+    </div>
+
+    <div>
+        <label for="location">location:</label>
+        <input type="text" id="location" name="location" placeholder="Location" required autofocus>
+    </div>
+
+    <div>
+        <label for="product_type">Product Type:</label>
+        <input type="text" id="product_type" name="product_type" placeholder="Product Type" required autofocus>
+    </div>
+
+    <button type="submit">Add Manufacturer</button>
+
+</form>
+
+{% endblock %}

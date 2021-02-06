@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, Blueprint
+from flask import Flask, render_template, request, redirect, Blueprint
 from models.bike import Bike
 from models.manufacturer import Manufacturer
 import repositories.bike_repository as bike_repository
@@ -17,6 +17,17 @@ def bikes():
 def new_bike():
     manufacturers = manufacturer_repository.select_all()
     return render_template("bikes/new.html", all_manufacturers = manufacturers)
+
+@bikes_blueprint.route("/bikes", methods=['POST'])
+def create_bike():
+    manufacturer = manufacturer_repository.select(request.form['manufacturer_id'])
+    model = request.form['model']
+    description = request.form['description']
+    buy_cost = request.form['buy_cost']
+    sell_price = request.form['sell_price']
+    bike = Bike(manufacturer, model, description, buy_cost, sell_price)
+    bike_repository.save(bike)
+    return redirect('/bikes')
 
 @bikes_blueprint.route("/bikes/show")
 def show():
