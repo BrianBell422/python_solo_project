@@ -32,6 +32,11 @@ def select(id):
         manufacturer = Manufacturer(result['name'], result['location'], result['product_type'], result['id'] )
     return manufacturer
 
+def update(manufacturer):
+    sql = "UPDATE manufacturers SET (name, location, product_type) = (%s, %s, %s) WHERE id = %s"
+    values = [manufacturer.name, manufacturer.location, manufacturer.product_type, manufacturer.id]
+    run_sql(sql, values)
+
 def delete_all():
     sql = "DELETE FROM manufacturers"
     run_sql(sql)
