@@ -19,13 +19,13 @@ manufacturer3 = Manufacturer("Yamaha", "Japan", "Road")
 manufacturer_repository.save(manufacturer3)
 
 
-bike1 = Bike(manufacturer1, "CR125", "2 Stroke Motocross", 2500, 5000)
+bike1 = Bike(manufacturer1, "CR125", "2 Stroke Motocross", 2500, 5000, 10)
 bike_repository.save(bike1)
 
-bike2 = Bike(manufacturer2, "KXF250", "4 Stroke Motocross", 3000, 6000)
+bike2 = Bike(manufacturer2, "KXF250", "4 Stroke Motocross", 3000, 6000, 10)
 bike_repository.save(bike2)
 
-bike3 = Bike(manufacturer3, "R1", "4 Stroke Road", 3500, 7000)
+bike3 = Bike(manufacturer3, "R1", "4 Stroke Road", 3500, 7000, 10)
 bike_repository.save(bike3)
 
 

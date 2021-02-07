@@ -30,7 +30,8 @@ def create_bike():
     description = request.form['description']
     buy_cost = request.form['buy_cost']
     sell_price = request.form['sell_price']
-    bike = Bike(manufacturer, model, description, buy_cost, sell_price)
+    stock_level = request.form['stock_level']
+    bike = Bike(manufacturer, model, description, buy_cost, sell_price, stock_level)
     bike_repository.save(bike)
     return redirect('/bikes')
 
@@ -52,7 +53,8 @@ def update_bike(id):
     description = request.form['description']
     buy_cost = request.form['buy_cost']
     sell_price = request.form['sell_price']
-    bike = Bike(manufacturer, model, description, buy_cost, sell_price, id)
+    stock_level = request.form['stock_level']
+    bike = Bike(manufacturer, model, description, buy_cost, sell_price, stock_level, id)
     bike_repository.update(bike)
     return redirect('/bikes')
 
