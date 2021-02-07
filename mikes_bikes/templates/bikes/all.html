@@ -1,25 +1,25 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Bikes</h1>
+<h1>All Stock</h1>
 
 {% for bike in all_bikes %}
     <hr>
     <div>
-        <span>
+        <span class="stock_list">
             <b>Manufacturer:</b> {{bike.manufacturer.name}}
             <b>Model:</b> {{bike.model}}
             <b>Description:</b> {{bike.description}}
             <b>Buy Cost:</b> {{bike.buy_cost}}
             <b>Sell Price:</b> {{bike.sell_price}}
-        
-            <h3><a href="/bikes/{{bike.id}}">Go to bike</a></h3>
         </span>
+        <div class="buttons"></div>
+            <div class="go_to_bike"></div>
+                <a href="/bikes/{{bike.id}}"><button>Go to bike</button></a>
+            </div>
+        </div>
     </div>
 {% endfor %}
-
-<hr>
-<h2><a href="bikes/new">Add new bike</a></h2>
     
 {% endblock %}
 

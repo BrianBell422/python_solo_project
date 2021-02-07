@@ -4,13 +4,19 @@
 <h1>Bikes</h1>
 
 {% for bike in all_bikes %}
-    <hr>
-    <div>
-        <h3><a href="/bikes/{{bike.id}}">{{bike.manufacturer.name}} {{bike.model}}</a></h3>
-    </div>
+    <div class="bike"></div>
+        <hr>
+        <div class="name_model">
+            <h3><a href="/bikes/{{bike.id}}">{{bike.manufacturer.name}} {{bike.model}}</a></h3>
+        </div>
+    </div> 
 {% endfor %}
 
 <hr>
-<h2><a href="bikes/new">Add new bike</a></h2>
-    
+
+<div class="buttons"></div>
+    <a href="/bikes/new"><button>Add new bike</button></a>
+</div>
+   
 {% endblock %}
+
