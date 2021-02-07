@@ -1,18 +1,26 @@
 {% extends "base.html" %}
 {% block content %}
+
+<head>
+  <h1>Selected Manufacturer</h1>
+</head>
+
 <hr>
-  <div>
-    <h2>{{manufacturer.name}}</h2>
-    <p>{{manufacturer.location}}</p>
-    <p>{{manufacturer.product_type}}</p>
-    
+
+<div>
+  <h2>{{manufacturer.name}}</h2>
+  <p>{{manufacturer.location}}</p>
+  <p>{{manufacturer.product_type}}</p>
+</div>
+
+<div class="buttons">
+  <div class="edit_button">
     <p><a href="/manufacturers/{{manufacturer.id}}/edit"><button>Edit</button></a></p>
   </div>
-  
-  <div>
-    <form class="delete-form" action="/manufacturers/{{manufacturer.id}}/delete" method="POST">
-        <button>Delete</button>
-    </form>
+
+  <form class="delete_button" action="/manufacturers/{{manufacturer.id}}/delete" method="POST">
+      <button>Delete</button>
+  </form>
 </div>
 
 {% endblock %}

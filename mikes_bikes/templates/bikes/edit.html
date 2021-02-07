@@ -1,9 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
 
+<head>
+  <h1>Edit Bike</h1>
+</head>
+
 <form action="/bikes/{{bike.id}}" method="post">
   
-  <div>
+  <div class="edit_manufacturer">
       <label for="manufacturer">Manufacturer:</label>
       <select id="manufacturer" name="manufacturer_id">
         {% for manufacturer in all_manufacturers %}
@@ -15,27 +19,29 @@
       </select>
   </div>
 
-  <div>
+  <div class="edit_model">
     <label for="model">Model:</label>
     <input type="text" id="model" name="model" value="{{bike.model}}" required>
   </div>
 
-  <div>
+  <div class="edit_description">
     <label for="description">Description:</label>
     <input type="text" id="description" name="description" value="{{bike.description}}" required autofocus>
   </div>
 
-  <div>
+  <div class="edit_buy_cost">
     <label for="buy_cost">Buy Cost:</label>
     <input type="text" id="buy_cost" name="buy_cost" value="{{bike.buy_cost}}" required autofocus>
   </div>
 
-  <div>
+  <div class="edit_sell_price">
     <label for="sell_price">Sell Price:</label>
     <input type="text" id="sell_price" name="sell_price" value="{{bike.sell_price}}" required autofocus>
   </div>
 
-  <button type="submit">Update Bike</button>
+  <div class="buttons">
+    <button type="submit">Update Bike</button>
+  </div>
 
 </form>
 

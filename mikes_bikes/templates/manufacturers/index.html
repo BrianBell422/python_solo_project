@@ -1,16 +1,21 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Manufacturers</h1>
+
+<head>
+    <h1>Manufacturers</h1>
+</head>
 
 {% for manufacturer in all_manufacturers %}
     <hr>
-    <div>
+    <div class="manufacturer_name">
         <h3><a href="/manufacturers/{{manufacturer.id}}">{{manufacturer.name}}</a></h3>
     </div>
 {% endfor %}
 
-<hr>
-<a href="manufacturers/new"><button>Add new manufacturer</button></a>
+<div class="buttons">
+    <hr>
+    <a href="manufacturers/new"><button>Add new manufacturer</button></a>
+</div>
     
 {% endblock %}

@@ -1,9 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
 
+<head>
+    <h1>Add new bike</h1>
+</head>
+
 <form action="/bikes" method="post">
 
-    <div>
+    <div class="new_manufacturer">
         <label for="manufacturer">Manufacturer:</label>
         <select id="manufacturer" name="manufacturer_id">
             {% for manufacturer in all_manufacturers %}
@@ -13,27 +17,29 @@
         </select>
     </div>
 
-    <div>
+    <div class="new_model">
         <label for="model">Model:</label>
         <input type="text" id="model" name="model" placeholder="Model" required autofocus>
     </div>
 
-    <div>
+    <div class="new_description">
         <label for="description">Description:</label>
         <input type="text" id="description" name="description" placeholder="Description" required autofocus>
     </div>
 
-    <div>
+    <div class="new_buy_cost">
         <label for="buy_cost">Buy Cost:</label>
         <input type="text" id="buy_cost" name="buy_cost" placeholder="Buy Cost" required autofocus>
     </div>
 
-    <div>
+    <div class="new_sell_price">
         <label for="sell_price">Sell Price:</label>
         <input type="text" id="sell_price" name="sell_price" placeholder="Sell Price" required autofocus>
     </div>
 
-    <button type="submit">Add Bike</button>
+    <div class="buttons">
+        <button type="submit">Add Bike</button>
+    </div>
 
 </form>
 
