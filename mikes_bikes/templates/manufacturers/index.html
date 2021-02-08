@@ -4,18 +4,20 @@
 
 <header class="page_header">
     <h1>Manufacturers</h1>
+    <h3>Click on manufacturer for details</h3>
 </header>
+<section id="manufacturer_index"> 
+    {% for manufacturer in all_manufacturers %}
+        <hr>
+        <div id="manufacturer_name">
+            <h3><a href="/manufacturers/{{manufacturer.id}}">{{manufacturer.name}}</a></h3>
+        </div>
+        <hr>
+    {% endfor %}
+</section>
 
-{% for manufacturer in all_manufacturers %}
-    <hr>
-    <div class="manufacturer_name">
-        <h3><a href="/manufacturers/{{manufacturer.id}}">{{manufacturer.name}}</a></h3>
-    </div>
-{% endfor %}
-
-<div class="buttons">
-    <hr>
-    <a href="manufacturers/new"><button>Add new manufacturer</button></a>
+<div class="add_manufacturer_button">
+    <a href="manufacturers/new">Add new manufacturer</a>
 </div>
     
 {% endblock %}

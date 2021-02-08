@@ -62,12 +62,9 @@ a:active {
     list-style-type: none
 }
 
-.button {
-	
-	
+.button {	
 	font-size:15px;
-	font-weight:bold;
-	
+	font-weight:bold;	
 	text-decoration:none;
     text-shadow:0px 1px 0px #5b8a3c;
     display: flex;
@@ -87,3 +84,26 @@ a:active {
 hr {
     border: 1px solid darkgrey;
 }
+
+#manufacturer_name {
+    text-align: center;
+}
+
+.add_manufacturer_button {	
+	font-size:15px;
+	font-weight:bold;	
+	text-decoration:none;
+    text-shadow:0px 1px 0px #5b8a3c;
+    display: flex;
+    justify-content: center;
+}
+
+.add_manufacturer_button > a {
+    text-decoration: transparent;
+    display: inline-block;
+    background-color:#77b55a;
+    border-radius:4px;
+    border:1px solid #4b8f29;
+    cursor:pointer;
+    padding:6px 12px;
+    }
