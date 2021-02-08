@@ -62,53 +62,10 @@ a:active {
     list-style-type: none
 }
 
-.button {	
-	font-size:15px;
-	font-weight:bold;	
-	text-decoration:none;
-    text-shadow:0px 1px 0px #5b8a3c;
-    display: flex;
-    justify-content: center;
-}
-
-.button > a {
-    text-decoration: transparent;
-    display: inline-block;
-    background-color:#77b55a;
-    border-radius:4px;
-	border:1px solid #4b8f29;
-    cursor:pointer;
-    padding:6px 12px;
-}
-
-.delete_button {
-    display: flex;
-    justify-content: center;
-    margin: 20px;
-}
-
-.delete_button > button {
-    text-decoration: transparent;
-    display: inline-block;
-    background-color: red;
-    border-radius:4px;
-	border:1px solid darkred;
-    cursor:pointer;
-    padding:6px 12px;
-    font-size: 15px;
-    font-weight: bold;
-    text-decoration:none;
-    text-shadow:0px 1px 0px darkred;
-}
-
 hr {
     border: 1px solid darkgrey;
 }
 
 .center_items {
     text-align: center;
-}
-
-.edit_form {
-    
 }
