@@ -7,16 +7,18 @@
 
 <hr>
 
-<div>
+<section class="center_items">
   <h2>{{manufacturer.name}}</h2>
   <p>{{manufacturer.location}}</p>
   <p>{{manufacturer.product_type}}</p>
-</div>
+</section>
 
 <div class="buttons">
-  <div class="edit_button">
-    <p><a href="/manufacturers/{{manufacturer.id}}/edit"><button>Edit</button></a></p>
+  <div class="button">
+    <a href="/manufacturers/{{manufacturer.id}}/edit">Edit</a>
   </div>
+
+  <br>
 
   <form class="delete_button" action="/manufacturers/{{manufacturer.id}}/delete" method="POST">
       <button>Delete</button>
