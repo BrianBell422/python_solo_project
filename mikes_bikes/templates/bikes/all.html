@@ -14,7 +14,13 @@
             <b>Description:</b> {{bike.description}}
             <b>Buy Cost:</b> {{bike.buy_cost}}
             <b>Sell Price:</b> {{bike.sell_price}}
-            <b>Stock Level:</b> {{bike.stock_level}}
+            {% if (bike.stock_level) == 0: %}
+                <b>Stock Level:</b> {{bike.stock_level}} <b>OUT OF STOCK</b>
+                {% elif (bike.stock_level) < 3: %}
+                <b>Stock Level:</b> {{bike.stock_level}} <b>LOW STOCK</b>
+                {% else %}
+                <b>Stock Level:</b> {{bike.stock_level}}
+            {% endif %}
         </span>
         <div class="buttons"></div>
             <div class="go_to_bike"></div>
@@ -22,6 +28,7 @@
             </div>
         </div>
     </div>
+
 {% endfor %}
     
 {% endblock %}
