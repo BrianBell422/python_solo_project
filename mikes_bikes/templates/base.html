@@ -10,22 +10,14 @@
 </head>
 <body>
     <main>
+      <header>
         <h1>Mike's Bikes</h1>
-        <nav>
-          <ul>
-            <li>
-              <a href="/">Home</a>
-            </li>
-            <li>
-              <a href="/bikes/all">All Stock</a>
-            </li>
-            <li>
-              <a href="/manufacturers">Manufacturers</a>
-            </li>
-            <li>
-                <a href="/bikes">Bikes</a>
-              </li>
-          </ul>
+      </header>
+        <nav>          
+          <a class="nav_item_home" href="/">Home</a>
+          <a class="nav_item_all_stock" href="/bikes/all">All Stock</a>
+          <a class="nav_item_manufacturers" href="/manufacturers">Manufacturers</a>            
+          <a class="nav_item_bikes" href="/bikes">Bikes</a>         
         </nav>
         <section id="content">
             {% block content %}

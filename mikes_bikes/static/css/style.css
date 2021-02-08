@@ -2,3 +2,19 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+header {
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 100px;
+}
+
+#nav_item_home {
+    padding: 25px 50px;
+}
+
