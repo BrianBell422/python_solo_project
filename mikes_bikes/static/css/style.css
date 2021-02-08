@@ -1,8 +1,9 @@
 body {
     font-family: 'Montserrat', sans-serif;
+    background-color: lightgrey;
 }
 
-header {
+.base_header {
     text-align: center;
 }
 
@@ -12,9 +13,77 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 20px 100px;
+    font-size: large;
 }
 
-#nav_item_home {
-    padding: 25px 50px;
+a:link {
+    color: black;
+    text-decoration: transparent;
+}
+  
+a:visited {
+    color: black;
+    text-decoration: transparent;
+}
+  
+a:hover {
+    color:black;
+    text-decoration: underline;
 }
 
+a:active {
+    color: darkgrey;
+    text-decoration: underline;
+}
+
+.page_header {
+    text-align: center;
+    padding-bottom: 50px;
+    padding-top: 30px;
+}
+
+#index_grid_container {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-evenly;
+}
+
+#stock_list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-column-gap: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.list_item {
+    padding-right: 10px;
+    padding-left: 10px;
+    list-style-type: none
+}
+
+.button {
+	
+	
+	font-size:15px;
+	font-weight:bold;
+	
+	text-decoration:none;
+    text-shadow:0px 1px 0px #5b8a3c;
+    display: flex;
+    justify-content: center;
+}
+
+.button > a {
+    text-decoration: transparent;
+    display: inline-block;
+    background-color:#77b55a;
+    border-radius:4px;
+	border:1px solid #4b8f29;
+    cursor:pointer;
+    padding:6px 12px;
+}
+
+hr {
+    border: 1px solid darkgrey;
+}

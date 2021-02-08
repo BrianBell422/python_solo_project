@@ -8,11 +8,11 @@ manufacturers_blueprint = Blueprint("/manufacturers", __name__)
 @manufacturers_blueprint.route("/manufacturers")
 def manufacturers():
     manufacturers = manufacturer_repository.select_all()
-    return render_template("manufacturers/index.html", all_manufacturers = manufacturers)
+    return render_template("manufacturers/index.html", all_manufacturers = manufacturers, title="Mikes Bikes - Manufacturers")
 
 @manufacturers_blueprint.route("/manufacturers/new", methods=['GET'])
 def new_manufacturer():
-    return render_template("manufacturers/new.html")
+    return render_template("manufacturers/new.html", title="Mikes Bikes - Add New Manufacturer")
 
 @manufacturers_blueprint.route("/manufacturers", methods=["POST"])
 def create_manufacturer():
@@ -26,12 +26,12 @@ def create_manufacturer():
 @manufacturers_blueprint.route("/manufacturers/<id>", methods=['GET'])
 def show_manufacturer(id):
     manufacturer = manufacturer_repository.select(id)
-    return render_template('manufacturers/show.html', manufacturer = manufacturer)
+    return render_template('manufacturers/show.html', manufacturer = manufacturer, title="Mikes Bikes - Selected Manufacturer")
 
 @manufacturers_blueprint.route("/manufacturers/<id>/edit", methods=['GET'])
 def edit_manufacturers(id):
     manufacturer = manufacturer_repository.select(id)
-    return render_template('manufacturers/edit.html', manufacturer = manufacturer)
+    return render_template('manufacturers/edit.html', manufacturer = manufacturer, title="Mikes Bikes - Edit Manufacturer")
 
 @manufacturers_blueprint.route("/manufacturers/<id>", methods=['POST'])
 def update_manufacturer(id):
@@ -41,10 +41,6 @@ def update_manufacturer(id):
     manufacturer = Manufacturer(name, location, product_type, id)
     manufacturer_repository.update(manufacturer)
     return redirect ('/manufacturers')
-
-@manufacturers_blueprint.route("/manufacturers/show")
-def show():
-    return render_template("manufacturers/show.html")
 
 @manufacturers_blueprint.route("/manufacturers/<id>/delete", methods=['POST'])
 def delete_manufacturer(id):

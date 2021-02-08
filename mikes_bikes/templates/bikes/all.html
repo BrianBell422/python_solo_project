@@ -1,33 +1,32 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<head>
+<header class="page_header">
     <h1>All Stock</h1>
-</head>
+</header>
 
 {% for bike in all_bikes %}
     <hr>
     <div>
-        <span class="stock_list">
-            <b>Manufacturer:</b> {{bike.manufacturer.name}}
-            <b>Model:</b> {{bike.model}}
-            <b>Description:</b> {{bike.description}}
-            <b>Buy Cost:</b> {{bike.buy_cost}}
-            <b>Sell Price:</b> {{bike.sell_price}}
-            {% if (bike.stock_level) == 0: %}
-                <b>Stock Level:</b> {{bike.stock_level}} <b>OUT OF STOCK</b>
+        <ul id="stock_list">
+            <li class="list_item"><b>Manufacturer:</b> {{bike.manufacturer.name}}</li>
+            <li class="list_item"><b>Model:</b> {{bike.model}}</li>
+            <li class="list_item"><b>Description:</b> {{bike.description}}</li>
+            <li class="list_item"><b>Buy Cost:</b> {{bike.buy_cost}}</li>
+            <li class="list_item"><b>Sell Price:</b> {{bike.sell_price}}</li>
+            <li class="list_item">{% if (bike.stock_level) == 0: %}
+                <b>Stock Level:</b> {{bike.stock_level}} <b style="color:red;">OUT OF STOCK</b>
                 {% elif (bike.stock_level) < 3: %}
-                <b>Stock Level:</b> {{bike.stock_level}} <b>LOW STOCK</b>
+                <b>Stock Level:</b> {{bike.stock_level}} <b style="color: rgb(243, 101, 50);">LOW STOCK</b>
                 {% else %}
                 <b>Stock Level:</b> {{bike.stock_level}}
-            {% endif %}
-        </span>
-        <div class="buttons"></div>
-            <div class="go_to_bike"></div>
-                <a href="/bikes/{{bike.id}}"><button>Go to bike</button></a>
-            </div>
+            {% endif %}</li>
+        </ul>
+        <div class="button">
+            <a href="/bikes/{{bike.id}}">Go to bike</a>
         </div>
     </div>
+    <hr>
 
 {% endfor %}
     

@@ -11,17 +11,17 @@ bikes_blueprint = Blueprint("/bikes", __name__)
 @bikes_blueprint.route("/bikes")
 def bikes():
     bikes = bike_repository.select_all()
-    return render_template("bikes/index.html", all_bikes = bikes)
+    return render_template("bikes/index.html", all_bikes = bikes, title="Mikes Bikes - Bikes")
 
 @bikes_blueprint.route("/bikes/all")
 def bikes_all():
     bikes = bike_repository.select_all()
-    return render_template("bikes/all.html", all_bikes = bikes)
+    return render_template("bikes/all.html", all_bikes = bikes, title="Mikes Bikes - All Stock")
 
 @bikes_blueprint.route("/bikes/new", methods=['GET'])
 def new_bike():
     manufacturers = manufacturer_repository.select_all()
-    return render_template("bikes/new.html", all_manufacturers = manufacturers)
+    return render_template("bikes/new.html", all_manufacturers = manufacturers, title="Mikes Bikes - Create New Bike")
 
 @bikes_blueprint.route("/bikes", methods=['POST'])
 def create_bike():
@@ -38,13 +38,13 @@ def create_bike():
 @bikes_blueprint.route("/bikes/<id>", methods=['GET'])
 def show_bike(id):
     bike = bike_repository.select(id)
-    return render_template('bikes/show.html', bike = bike)
+    return render_template('bikes/show.html', bike = bike, title="Mikes Bikes - Selected Bike")
 
 @bikes_blueprint.route("/bikes/<id>/edit", methods=['GET'])
 def edit_bike(id):
     bike = bike_repository.select(id)
     manufacturers = manufacturer_repository.select_all()
-    return render_template('bikes/edit.html', bike = bike, all_manufacturers = manufacturers)
+    return render_template('bikes/edit.html', bike = bike, all_manufacturers = manufacturers, title="Mikes Bikes - Edit Bike")
 
 @bikes_blueprint.route("/bikes/<id>", methods=['POST'])
 def update_bike(id):
@@ -57,10 +57,6 @@ def update_bike(id):
     bike = Bike(manufacturer, model, description, buy_cost, sell_price, stock_level, id)
     bike_repository.update(bike)
     return redirect('/bikes')
-
-@bikes_blueprint.route("/bikes/show")
-def show():
-    return render_template("bikes/show.html")
 
 @bikes_blueprint.route("/bikes/<id>/delete", methods=['POST'])
 def delete_bike(id):
