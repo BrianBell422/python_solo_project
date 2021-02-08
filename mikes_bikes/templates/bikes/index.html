@@ -3,22 +3,25 @@
 {% block content %}
 <header class="page_header">
     <h1>Bikes</h1>
+    <h3>Click on bike for details</h3>
 </header>
 
-{% for bike in all_bikes %}
-    <div class="bike"></div>
-        <hr>
-        <div class="name_model">
-            <h3><a href="/bikes/{{bike.id}}">{{bike.manufacturer.name}} {{bike.model}}</a></h3>
-        </div>
-        <hr>
-    </div> 
-{% endfor %}
+<section class="center_items">
+    {% for bike in all_bikes %}
+        <div class="bike"></div>
+            <hr>
+            <div class="name_model">
+                <h3><a href="/bikes/{{bike.id}}">{{bike.manufacturer.name}} {{bike.model}}</a></h3>
+            </div>
+            <hr>
+        </div> 
+    {% endfor %}
+</section>
 
 <hr>
 
-<div class="buttons"></div>
-    <a href="/bikes/new"><button>Add new bike</button></a>
+<div class="button">
+    <a href="/bikes/new">Add new bike</a>
 </div>
    
 {% endblock %}
