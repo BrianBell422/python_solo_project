@@ -6,7 +6,7 @@
 </head>
 <hr>
 
-<div>
+<div class="center_items">
     <p><h2>{{bike.manufacturer.name}}</h2></p>
     <p><h3>Model: {{bike.model}}</h3></p>
     <p>Description: {{bike.description}}</p>
@@ -21,13 +21,17 @@
     {% endif %}
 </div>
 
+<br>
+
 <div class="buttons">
-    <div class="edit_button">
-        <p><a href="/bikes/{{bike.id}}/edit"><button>Edit</button></a></p>
+    <div class="button">
+        <a href="/bikes/{{bike.id}}/edit">Edit</a>
     </div>
 
+    <br>
+
     <form class="delete_button" action="/bikes/{{bike.id}}/delete" method="POST">
-        <button>Delete</button>
+        <button><b>Delete</b></button>
     </form>
 </div>
     
