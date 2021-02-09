@@ -32,6 +32,11 @@ Mark manufacturers as active/deactivated. Deactivated manufacturers will not app
 
 TECHNOLOGIES USED:
 
-
-
-SCREENSHOTS:
+Trello
+Draw.io
+SQL
+Psycopg2
+Flask
+Postico
+Fontawesome
+Google fonts
