@@ -14,6 +14,7 @@
             <li class="list_item"><b>Description:</b> {{bike.description}}</li>
             <li class="list_item"><b>Buy Cost:</b> {{bike.buy_cost}}</li>
             <li class="list_item"><b>Sell Price:</b> {{bike.sell_price}}</li>
+            <li class="list_item"><b>Price Mark-up:</b> <b style="color: green;">{{bike.mark_up}}%</b></li>
             <li class="list_item">{% if (bike.stock_level) == 0: %}
                 <b>Stock Level:</b> {{bike.stock_level}} <b style="color:red;">OUT OF STOCK</b>
                 {% elif (bike.stock_level) < 3: %}
