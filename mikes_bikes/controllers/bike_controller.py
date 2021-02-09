@@ -38,6 +38,7 @@ def create_bike():
 @bikes_blueprint.route("/bikes/<id>", methods=['GET'])
 def show_bike(id):
     bike = bike_repository.select(id)
+    # mark_up = (bike.buy_cost / bike.sell_price) * 100 
     return render_template('bikes/show.html', bike = bike, title="Mikes Bikes - Selected Bike")
 
 @bikes_blueprint.route("/bikes/<id>/edit", methods=['GET'])
@@ -54,7 +55,8 @@ def update_bike(id):
     buy_cost = request.form['buy_cost']
     sell_price = request.form['sell_price']
     stock_level = request.form['stock_level']
-    bike = Bike(manufacturer, model, description, buy_cost, sell_price, stock_level, id)
+    update_mark_up = round((((float(sell_price) - float(buy_cost)) / float(buy_cost)) * 100), 2) 
+    bike = Bike(manufacturer, model, description, buy_cost, sell_price, stock_level, update_mark_up, id)
     bike_repository.update(bike)
     return redirect('/bikes')
 

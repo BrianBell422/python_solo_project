@@ -5,8 +5,8 @@ from models.manufacturer import Manufacturer
 import repositories.manufacturer_repository as manufacturer_repository
 
 def save(bike):
-    sql = "INSERT INTO bikes (manufacturer_id, model, description, buy_cost, sell_price, stock_level) VALUES (%s, %s, %s, %s, %s, %s) RETURNING *"
-    values = [bike.manufacturer.id, bike.model, bike.description, bike.buy_cost, bike.sell_price, bike.stock_level]
+    sql = "INSERT INTO bikes (manufacturer_id, model, description, buy_cost, sell_price, stock_level, mark_up) VALUES (%s, %s, %s, %s, %s, %s, %s) RETURNING *"
+    values = [bike.manufacturer.id, bike.model, bike.description, bike.buy_cost, bike.sell_price, bike.stock_level, bike.mark_up]
     results = run_sql(sql, values)
     id = results[0]['id']
     bike.id = id
@@ -20,7 +20,7 @@ def select_all():
 
     for row in results:
         manufacturer = manufacturer_repository.select(row['manufacturer_id'])
-        bike = Bike(manufacturer, row['model'], row['description'], row['buy_cost'], row['sell_price'], row['stock_level'], row['id'])
+        bike = Bike(manufacturer, row['model'], row['description'], row['buy_cost'], row['sell_price'], row['stock_level'], row['mark_up'], row['id'])
         bikes.append(bike)
     return bikes
 
@@ -32,12 +32,12 @@ def select(id):
 
     if result is not None:
         manufacturer = manufacturer_repository.select(result['manufacturer_id'])
-        bike = Bike(manufacturer, result['model'], result['description'], result['buy_cost'], result['sell_price'], result['stock_level'], result['id'])
+        bike = Bike(manufacturer, result['model'], result['description'], result['buy_cost'], result['sell_price'], result['stock_level'], result['mark_up'], result['id'])
     return bike
 
 def update(bike):
-    sql = "UPDATE bikes SET (manufacturer_id, model, description, buy_cost, sell_price, stock_level) = (%s, %s, %s, %s, %s, %s) WHERE id = %s"
-    values = [bike.manufacturer.id, bike.model, bike.description, bike.buy_cost, bike.sell_price, bike.stock_level, bike.id]
+    sql = "UPDATE bikes SET (manufacturer_id, model, description, buy_cost, sell_price, stock_level, mark_up) = (%s, %s, %s, %s, %s, %s, %s) WHERE id = %s"
+    values = [bike.manufacturer.id, bike.model, bike.description, bike.buy_cost, bike.sell_price, bike.stock_level, bike.mark_up, bike.id]
     print(values)
     run_sql(sql, values)
 

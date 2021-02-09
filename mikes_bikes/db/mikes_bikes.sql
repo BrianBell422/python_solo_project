@@ -15,5 +15,6 @@ CREATE TABLE bikes (
     description VARCHAR(255),
     buy_cost INT,
     sell_price INT,
-    stock_level INT
+    stock_level INT,
+    mark_up INT
 );
