@@ -12,7 +12,9 @@
 <body>
     <main>
       <header class="base_header">
+        <section class="header_content">
         <h1>Mike's Bikes</h1>
+      </section>
       </header>
         <nav>          
           <a class="nav_item_home" href="/">Home</a>
@@ -24,7 +26,13 @@
             {% block content %}
       
             {% endblock%}
+        <br>
         </section>
+        <footer>
+          <div>
+            <img src="/static/images/footer.png" alt="Footer" class="footer_img">
+          </div>
+        </footer>
         </main>
 </body>
 </html>
