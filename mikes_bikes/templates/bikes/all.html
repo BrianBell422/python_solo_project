@@ -21,18 +21,18 @@
     <hr>
     <div>
         <ul class="stock_list">
-            <li class="list_item"><b>Manufacturer:</b> {{bike.manufacturer.name}}</li>
-            <li class="list_item"><b>Model:</b> {{bike.model}}</li>
-            <li class="list_item"><b>Description:</b> {{bike.description}}</li>
-            <li class="list_item"><b>Buy Cost:</b> {{bike.buy_cost}}</li>
-            <li class="list_item"><b>Sell Price:</b> {{bike.sell_price}}</li>
-            <li class="list_item"><b>Price Mark-up:</b> <b style="color: green;">{{bike.mark_up}}%</b></li>
+            <li class="list_item">{{bike.manufacturer.name}}</li>
+            <li class="list_item">{{bike.model}}</li>
+            <li class="list_item">{{bike.description}}</li>
+            <li class="list_item">{{bike.buy_cost}}</li>
+            <li class="list_item">{{bike.sell_price}}</li>
+            <li class="list_item"><b style="color: green;">{{bike.mark_up}}%</b></li>
             <li class="list_item">{% if (bike.stock_level) == 0: %}
-                <b>Stock Level:</b> {{bike.stock_level}} <b style="color:red;">OUT OF STOCK</b>
+                {{bike.stock_level}} <b style="color:red;">OUT OF STOCK</b>
                 {% elif (bike.stock_level) < 3: %}
-                <b>Stock Level:</b> {{bike.stock_level}} <b style="color: rgb(243, 101, 50);">LOW STOCK</b>
+                {{bike.stock_level}} <b style="color: rgb(243, 101, 50);">LOW STOCK</b>
                 {% else %}
-                <b>Stock Level:</b> {{bike.stock_level}}
+                {{bike.stock_level}}
             {% endif %}</li>
         </ul>
         <div class="button">
