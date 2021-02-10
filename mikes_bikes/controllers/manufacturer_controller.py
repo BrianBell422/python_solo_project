@@ -46,3 +46,8 @@ def update_manufacturer(id):
 def delete_manufacturer(id):
     manufacturer_repository.delete(id)
     return redirect('/manufacturers')
+
+@manufacturers_blueprint.route("/manufacturers/<id>/bikes", methods=['GET'])
+def bikes_by_manufacturer(id):
+    manufacturer_repository.bikes(id)
+    return render_template("manufacturers/bikes.html", manufacturer = manufacturer, all_bikes = bikes, title="Mikes Bikes - Bikes By Manufacturer")

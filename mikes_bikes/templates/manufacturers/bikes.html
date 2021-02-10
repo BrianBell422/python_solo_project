@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<header class="page_header">
+    <h1>Bikes by manufacturer</h1>
+    <h3>Click on bike for details</h3>
+</header>
+
+<section class="center_items">
+    {% for bike in all_bikes %}
+        <div class="bike"></div>
+            <hr>
+            <div class="name_model">
+                <h3><a href="/bikes/{{bike.id}}">{{bike.manufacturer.name}} {{bike.model}}</a></h3>
+            </div>
+            <hr>
+        </div> 
+    {% endfor %}
+</section>
+   
+{% endblock %}
