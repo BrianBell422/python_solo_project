@@ -11,11 +11,12 @@
     <p><h3>Model: {{bike.model}}</h3></p>
     <p>Description: {{bike.description}}</p>
     <p>Buy Cost: {{bike.buy_cost}}</p>
-    <p>Sell Price: {{bike.sell_price}} <span style="color: green">+{{bike.mark_up}}%</span></p>
+    <p>Sell Price: {{bike.sell_price}}</p>
+    <p>Mark Up: <span style="color: green">+{{bike.mark_up}}%</span></p>
     {% if (bike.stock_level) == 0: %}
-        <b>Stock Level:</b> {{bike.stock_level}} <b>OUT OF STOCK</b>
+        <b>Stock Level:</b> {{bike.stock_level}} <b> OUT OF STOCK</b>
         {% elif (bike.stock_level) < 3: %}
-        <b>Stock Level:</b> {{bike.stock_level}} <b>LOW STOCK</b>
+        <b>Stock Level:</b> {{bike.stock_level}} <b> LOW STOCK</b>
         {% else %}
         <b>Stock Level:</b> {{bike.stock_level}}
     {% endif %}
