@@ -49,5 +49,6 @@ def delete_manufacturer(id):
 
 @manufacturers_blueprint.route("/manufacturers/<id>/bikes", methods=['GET'])
 def bikes_by_manufacturer(id):
-    manufacturer_repository.bikes(id)
+    manufacturer = manufacturer_repository.select(id)
+    bikes = manufacturer_repository.bikes(manufacturer)
     return render_template("manufacturers/bikes.html", manufacturer = manufacturer, all_bikes = bikes, title="Mikes Bikes - Bikes By Manufacturer")
