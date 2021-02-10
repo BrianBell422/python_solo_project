@@ -43,7 +43,7 @@ bike_repository.save(bike4)
 bike5 = Bike(manufacturer5, "748R", "Road Race", 4500, 8200, 7)
 bike_repository.save(bike5)
 
-bike6 = Bike(manufacturer6, "Sportster", "Cruiser Road", 4000, 8000, 4)
+bike6 = Bike(manufacturer6, "Sportster", "Cruiser Road", 4000, 8000, 1)
 bike_repository.save(bike6)
 
 
