@@ -58,6 +58,14 @@ Mark manufacturers as active/deactivated. Deactivated manufacturers will not app
 
 TECHNOLOGIES USED:
 
+Python 3
+
+HTML
+
+CSS
+
+VSCode
+
 Trello
 
 Draw.io
