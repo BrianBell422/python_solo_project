@@ -54,6 +54,6 @@ def bikes(manufacturer):
     results = run_sql(sql, values)
 
     for row in results:
-        bike = Bike(manufacturer, result['model'], result['description'], result['buy_cost'], result['sell_price'], result['stock_level'], result['mark_up'], result['id'])
+        bike = Bike(manufacturer, row['model'], row['description'], row['buy_cost'], row['sell_price'], row['stock_level'], row['mark_up'], row['id'])
         bikes.append(bike)
     return bikes
