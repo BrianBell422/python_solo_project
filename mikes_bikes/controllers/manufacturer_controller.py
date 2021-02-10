@@ -40,7 +40,7 @@ def update_manufacturer(id):
     product_type = request.form['product_type']
     manufacturer = Manufacturer(name, location, product_type, id)
     manufacturer_repository.update(manufacturer)
-    return render_template('manufacturers/show.html', manufacturer = manufacturer, title="Mikes Bikes - Selected Manufacturer")
+    return redirect ('/manufacturers')
 
 @manufacturers_blueprint.route("/manufacturers/<id>/delete", methods=['POST'])
 def delete_manufacturer(id):
