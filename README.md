@@ -21,7 +21,6 @@ Build an app which allows a shopkeeper to track their shop's inventory. This is 
 ```
 ### MVP:
 ```
-
 The inventory should track individual products, including a name, description, stock quantity, buying cost, and selling price.
 
 The inventory should track manufacturers, including a name and any other appropriate details.
@@ -39,10 +38,10 @@ As well as showing stock quantity as a number, the app should visually highlight
 Inspired by
 
 eBay, Amazon (back end only), Magento
+```
 
-
-Possible Extensions
-
+### Possible Extensions
+```
 Calculate the markup on items in the store, and display it in the inventory
 
 Filter the inventory list by manufacturer. For example, provide an option to view all books in stock by a certain author.
@@ -51,12 +50,12 @@ Categorise your items. Books might be categorised by genre (crime, horror, roman
 categories.
 
 Mark manufacturers as active/deactivated. Deactivated manufacturers will not appear when creating new products.
+```
 
 
 
-
-TECHNOLOGIES USED:
-
+### TECHNOLOGIES USED:
+```
 Python 3
 
 HTML
@@ -80,6 +79,7 @@ Postico
 Fontawesome
 
 Google fonts
+```
 
 ![Screenshot 2021-04-09 at 11 05 19](https://user-images.githubusercontent.com/74567808/114203594-37f26d00-9950-11eb-990e-d06e5c3f9857.png)
 
