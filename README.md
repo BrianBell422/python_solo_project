@@ -1,4 +1,4 @@
-###RUNNING INSTRUCTIONS:
+#RUNNING INSTRUCTIONS:
 ```
 Clone repository to local working directory
 
