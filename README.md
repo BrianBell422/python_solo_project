@@ -83,10 +83,17 @@ Fontawesome
 Google fonts
 
 ![Screenshot 2021-04-09 at 11 05 19](https://user-images.githubusercontent.com/74567808/114203594-37f26d00-9950-11eb-990e-d06e5c3f9857.png)
+
 ![Screenshot 2021-04-09 at 11 05 40](https://user-images.githubusercontent.com/74567808/114203615-3c1e8a80-9950-11eb-99be-83281c6956d9.png)
+
 ![Screenshot 2021-04-09 at 11 05 57](https://user-images.githubusercontent.com/74567808/114203625-3d4fb780-9950-11eb-8aba-c93a282cbb32.png)
+
 ![Screenshot 2021-04-09 at 11 06 22](https://user-images.githubusercontent.com/74567808/114203628-3de84e00-9950-11eb-9590-90e684dac525.png)
+
 ![Screenshot 2021-04-09 at 11 06 36](https://user-images.githubusercontent.com/74567808/114203631-3e80e480-9950-11eb-8292-d0dbdae289c7.png)
+
 ![Screenshot 2021-04-09 at 11 06 54](https://user-images.githubusercontent.com/74567808/114203636-3f197b00-9950-11eb-9a50-5430011832fe.png)
+
 ![Screenshot 2021-04-09 at 11 07 05](https://user-images.githubusercontent.com/74567808/114203637-3fb21180-9950-11eb-9d80-7e8451f73860.png)
+
 ![Screenshot 2021-04-09 at 11 07 17](https://user-images.githubusercontent.com/74567808/114203639-404aa800-9950-11eb-985e-d84a720dda54.png)
