@@ -13,17 +13,14 @@ To execute PSQL script, enter in terminal: psql -d mikes_bikes -f ./db/mikes_bik
 To populate our db tables enter into terminal: python3 console.py
 
 To run flask enter into terminal: flask run
-
-
-
-
-BRIEF:
-
+```
+### BRIEF:
+```
 Shop Inventory
 Build an app which allows a shopkeeper to track their shop's inventory. This is not an app which the customer will see, it is an admin/management app for the shop workers.
-
-
-MVP
+```
+### MVP:
+```
 
 The inventory should track individual products, including a name, description, stock quantity, buying cost, and selling price.
 
