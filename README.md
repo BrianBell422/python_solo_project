@@ -1,5 +1,5 @@
-RUNNING INSTRUCTIONS:
-
+###RUNNING INSTRUCTIONS:
+```
 Clone repository to local working directory
 
 cd python_solo_project > mikes_bikes, to open in VSCode enter into terminal: code .
