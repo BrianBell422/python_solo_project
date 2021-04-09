@@ -1,6 +1,6 @@
-#python_solo_project
+# python_solo_project
 
-###RUNNING INSTRUCTIONS:
+### RUNNING INSTRUCTIONS:
 ```
 Clone repository to local working directory
 
